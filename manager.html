@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard | Touch, Select & Dine</title>
+    <link rel="stylesheet" href="manager.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Restaurant Logo">
+        </div>
+        <div class="nav-title">
+            <h1>Manager Dashboard</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Go to Menu</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab-button active" data-view="orders">Orders</button>
+            <button class="tab-button" data-view="menu">Menu Management</button>
+            <button class="tab-button" data-view="history">Order History</button>
+            <button onclick="displaySalesSummary()">View Sales Summary</button>
+        </div>
+        
+        <!-- Orders Content Section -->
+        <div id="orders-content" class="manager-content">
+            <!-- Active and Completed Orders Section (in separate columns) -->
+            <div class="orders-wrapper">
+                <!-- Active Orders Column -->
+                <div class="orders-column" id="active-orders-column">
+                    <h2>Active Orders</h2>
+                    <div id="orders-list">
+                        <!-- Active Orders will be listed here -->
+                    </div>
+                </div>
+
+                <!-- Completed Orders Column -->
+                <div class="orders-column" id="completed-orders-column">
+                    <h2>Completed Orders</h2>
+                    <div id="completed-orders-list">
+                        <!-- Completed Orders will be listed here -->
+                    </div>
+                    <button onclick="clearCompletedOrders()">Clear Completed Orders</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Management Content Section -->
+        <div id="menu-content" class="manager-content" style="display: none;">
+            <h2>Menu Management</h2>
+            <p>Toggle item availability status using the buttons below.</p>
+            <div id="menu-items-list">
+                <!-- Menu items will be listed here -->
+            </div>
+        </div>
+        
+        <!-- Order History Content Section -->
+        <div id="history-content" class="manager-content" style="display: none;">
+            <h2>Order History</h2>
+            <div id="order-history">
+                <!-- Order history will be listed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    
+    <!-- Firebase Config -->
+    <script src="firebase-config.js"></script>
+    
+    <script src="manager.js"></script>
+</body>
+</html>

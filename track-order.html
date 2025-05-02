@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Order | Touch, Select & Dine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="Restaurant Logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Menu</a>
+            <a href="track-order.html" class="active">Track Order</a>
+        </div>
+    </div>
+
+    <!-- Heading -->
+    <h1>Track Your Order</h1>
+
+    <!-- Order Tracking Container -->
+    <div class="container">
+        <div id="tracking-container">
+            <!-- Tracking information will be dynamically loaded here -->
+            <p>Loading your order information...</p>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    
+    <!-- Firebase Config -->
+    <script src="firebase-config.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html> 

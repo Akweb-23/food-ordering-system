@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch, Select & Dine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="Restaurant Logo">
+        </div>
+        <div class="nav-links"> 
+            <a href="index.html" class="active">Menu</a>
+            <a href="track-order.html">Track Order</a>
+        </div>
+        <div id="cart">
+            <button id="cart-button" onclick="openCart()">Cart</button>
+            <span id="cart-icon-price">RS. 0.00</span>
+        </div>
+    </div>
+
+    <!-- Heading for Restaurant Menu -->
+    <h1>Touch, Select & Dine</h1>
+
+    <!-- Categories Section with Images -->
+    <div class="container">
+        <div class="categories">
+            <button class="category-btn" onclick="loadCategory('Pizza')">
+                <img src="margherita-pizza.jpg" alt="Pizza">
+                <span>Pizza</span>
+            </button>
+            <button class="category-btn" onclick="loadCategory('burger')">
+                <img src="burger.jpg" alt="Burger">
+                <span>Burger</span>
+            </button>
+            <button class="category-btn" onclick="loadCategory('fries')">
+                <img src="plain-fries.jpg" alt="Fries">
+                <span>Fries</span>
+            </button>
+            <button class="category-btn" onclick="loadCategory('drink')">
+                <img src="mocha-cold.jpg" alt="Drink">
+                <span>Drink</span>
+            </button>
+            <button class="category-btn" onclick="loadCategory('sandwich')">
+                <img src="sandwich.jpg" alt="Sandwich">
+                <span>Sandwich</span>
+            </button>
+            <button class="category-btn" onclick="loadCategory('Momos')">
+                <img src="steam-momos.jpg" alt="Momos">
+                <span>Momos</span>
+            </button>
+        </div>
+
+        <!-- Items List (dynamically populated) -->
+        <div id="items-list" class="items-list"></div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close-cart" onclick="closeCart()">&times;</span>
+            <h2>Cart Items</h2>
+            <table id="cart-table">
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+                <!-- Cart data will be dynamically added here -->
+            </table>
+            <div class="cart-actions">
+                <button id="confirm-order" onclick="showOrderForm()">Confirm Order</button>
+                <button id="cancel-order" onclick="closeCart()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div class="order-form-modal" id="order-form-modal">
+        <div class="order-form-content">
+            <span class="close-form" onclick="closeOrderForm()">&times;</span>
+            <h2>Enter your Details</h2>
+            <form id="order-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" required>
+                
+                <label for="table">Table no.:</label>
+                <input type="text" id="table" required>
+
+                <button type="button" onclick="submitOrder()">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    
+    <!-- Firebase Config -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- App Script -->
+    <script src="app.js"></script>
+</body>
+</html>
